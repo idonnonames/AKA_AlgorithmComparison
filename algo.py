@@ -36,7 +36,8 @@ def find_max_recursive(data, idx=1, current_max=None):
 # --- 2. UI Logic ---
 
 def generate_random_numbers():
-    random_list = [str(random.randint(1, 10000)) for _ in range(500)]
+    size = random.randint(10, 500)
+    random_list = [str(random.randint(1, 10000)) for _ in range(size)]
     text_data = ", ".join(random_list)
     entry_input.delete(0, tk.END)
     entry_input.insert(0, text_data)
@@ -146,7 +147,7 @@ entry_input.insert(0, "10, 5, 100, 2, 8")
 frame_btns = tk.Frame(root)
 frame_btns.pack(pady=10)
 
-btn_gen = tk.Button(frame_btns, text="Random Data (500)", command=generate_random_numbers, bg="#FFEB3B")
+btn_gen = tk.Button(frame_btns, text="Random Data (<500)", command=generate_random_numbers, bg="#FFEB3B")
 btn_gen.pack(side=tk.LEFT, padx=5)
 
 btn_run = tk.Button(
